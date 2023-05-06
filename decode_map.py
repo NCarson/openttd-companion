@@ -1,11 +1,9 @@
 import json
 j = """{ "map": { "x":64, "y":64, "is_water":"z368 C z15 C z15 C z15 C z14 1C z14 1C z14 1E z14 7F8 z13 C z13 C z13 C z13 7FE z13 7FC z13 3FC z13 3F8 z13 3 z14 3 z14 3 z14 3 z14 3 z14 3 z14 3 z14 3 z14 3 z14 3F8 z13 1F8 z13 1F8 z13 1 z65 18 z15 C z141"}}"""
 
-def parse(data):
-    d = json.loads(data)
-    encoded = d['map']['is_water']
+def decode(data):
     o = []
-    for piece in encoded.split():
+    for piece in data.split():
         if piece.startswith('z'):
             o.append("0"*int(piece[1:]))
         elif piece.startswith('f'):
@@ -36,5 +34,5 @@ def parse(data):
                 o.append("\n")
 
     o = "".join(o)
-    print(o)
+    return o
 
