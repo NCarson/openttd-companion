@@ -20,7 +20,7 @@ from PyQt5.QtCore import(
 import ttd_companion.version as version
 import ttd_companion.qrc_resources as qrc_resources
 from .main_widget import MainWidget
-from .server.debug_parser import DebugParser
+from .server.ttd_output_parser import TTDOutputParser
 
 DEBUG=True
 
@@ -51,7 +51,7 @@ class MainWindow(QMainWindow):
         self.setWindowTitle(tr(version.title))
         self.show()
 
-        self.parser = DebugParser(self.onMapUpdate)
+        self.parser = TTDOutputParser(self.onMapUpdate)
 
         # XXX we HAVE to set the file to non-blocking or it will just hang
         # unfortunately this is not portable to windows

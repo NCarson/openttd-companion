@@ -3,7 +3,7 @@ import json
 
 ID = 18
 
-class DebugParser:
+class TTDOutputParser:
     
     def __init__(self, callback):
         self.callback = callback
