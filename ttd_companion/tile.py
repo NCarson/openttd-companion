@@ -7,6 +7,7 @@ class TileItem(QGraphicsRectItem):
 
     pen_width = 2
     size = 20
+    color = Qt.gray
 
     def __init__(self, x, y, parent):
         size = self.size
@@ -15,9 +16,15 @@ class TileItem(QGraphicsRectItem):
         # Set the origin (position) of the rectangle in the scene.
         self.setPos(x*size, y*size)
         # Define the brush (fill).
-        brush = QBrush(Qt.green)
+        brush = QBrush(self.color)
         self.setBrush(brush)
         # Define the pen (line)
         pen = QPen(Qt.gray)
         pen.setWidth(self.pen_width)
         self.setPen(pen)
+
+class LandTileItem(TileItem):
+    color = Qt.green
+
+class WaterTileItem(TileItem):
+    color = Qt.blue

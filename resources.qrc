@@ -3,18 +3,8 @@
     <file alias="zoom-best.svg">resources/zoom-fit-best-symbolic.svg</file>
     <file alias="zoom-out.svg">resources/zoom-out-symbolic.svg</file>
     <file alias="zoom-in.svg">resources/zoom-in-symbolic.svg</file>
-    <file alias="exit.svg">scalable/actions/application-exit-symbolic.svg</file>
+    <file alias="exit.svg">resources/application-exit-symbolic.svg</file>
+	<file alias="save-as.svg">resources/document-save-as-symbolic.svg</file>
+	<file alias="open.svg">resources/document-open-symbolic.svg</file>
 </qresource>
 </RCC>
-
-<!--
-Paper/48x48/actions/gtk-zoom-100.png
-Paper/48x48/actions/gtk-zoom-in.png
-Paper/48x48/actions/gtk-zoom-out.png
-
-Paper/scalable/actions/zoom-fit-best-symbolic.svg
-Paper/scalable/actions/zoom-in-symbolic.svg
-Paper/scalable/actions/zoom-original-symbolic.svg
-Paper/scalable/actions/zoom-out-symbolic.svg
-
--->

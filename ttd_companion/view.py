@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import QGraphicsScene, QGraphicsView, QGraphicsEllipseItem
 from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtCore import Qt
 
-from tiles import TilesItem
+from .tiles import TilesItem
 
 class View(QGraphicsView):
     
@@ -12,10 +12,20 @@ class View(QGraphicsView):
         # Defining a scene rect of 400x200, with it's origin at 0,0.
         # If we don't set this on creation, we can set it later with .setSceneRect
         self.tiles = None
-        scene = self._setScene(width, height)
+        scene = self._newScene(width, height)
         super().__init__(scene)
         circle = QGraphicsEllipseItem(10*20,10*20, self.tiles.width(1), self.tiles.height(1), self.tiles)
         self._setScrollBars()
+
+    def _newScene(self, width, height, d=None):
+
+        scene = QGraphicsScene(0, 0,
+            TilesItem.width(width), 
+            TilesItem.height(height),
+        )
+        self.tiles = TilesItem(width, height, d)
+        scene.addItem(self.tiles)
+        return scene
 
     def _setScrollBars(self):
 
@@ -34,18 +44,8 @@ class View(QGraphicsView):
 
     def resetScene(self, d):
         w, h = d["map"]['x'], d['map']['y']
-        self._setScene(w, h, d)
+        self.setScene(self._newScene(w, h, d))
         
-    def _setScene(self, width, height, d=None):
-
-        scene = QGraphicsScene(0, 0,
-            TilesItem.width(width), 
-            TilesItem.height(height),
-        )
-        self.tiles = TilesItem(width, height, d)
-        scene.addItem(self.tiles)
-        return scene
-
     def cmdZoomOut(self, *args):
         self.scale(.8, .8)
         #self._setScrollBars()
