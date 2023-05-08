@@ -1,130 +1,117 @@
-
+import logzero
 import logging
-from logging.handlers import TimedRotatingFileHandler
-import sys
-import re
+from colored import fg#, bg, attr
 
-from colored import fg, bg, attr
+DEFAULT_FMT = "[%(levelname)1.1s "\
+    + "%(asctime)s %(module)s:%(lineno)d] "\
+    + "%(message)s"
 
+COLOR_DEFAULT_FMT = "%(color)s[%(levelname)1.1s "\
+    "%(asctime)s %(module)s:%(lineno)d]%(end_color)"\
+    "%(message)s"
 
-class StreamFormatter(logging.Formatter):
+#https://stackoverflow.com/questions/2183233/how-to-add-a-custom-loglevel-to-pythons-logging-facility
+def addLoggingLevel(levelName, levelNum, methodName=None):
+    if not methodName:
+        methodName = levelName.lower()
 
-    fmt = "" \
-        + "{clvl}{levelname}{cend}"\
-        + " | {filename}"\
-        + " | {funcName}"\
-        + " | {message}"
+    if hasattr(logging, levelName):
+       raise AttributeError('{} already defined in logging module'.format(levelName))
+    if hasattr(logging, methodName):
+       raise AttributeError('{} already defined in logging module'.format(methodName))
+    if hasattr(logging.getLoggerClass(), methodName):
+       raise AttributeError('{} already defined in logger class'.format(methodName))
 
+    # This method was inspired by the answers to Stack Overflow post
+    # http://stackoverflow.com/q/2183233/2988730, especially
+    # http://stackoverflow.com/a/13638084/2988730
+    def logForLevel(self, message, *args, **kwargs):
+        if self.isEnabledFor(levelNum):
+            self._log(levelNum, message, args, **kwargs)
+    def logToRoot(message, *args, **kwargs):
+        logging.log(levelNum, message, *args, **kwargs)
 
-    def __init__(self, fmt=None, ):
-        super().__init__(fmt=fmt or self.fmt, style="{", datefmt=None)
+    logging.addLevelName(levelNum, levelName)
+    setattr(logging, levelName, levelNum)
+    setattr(logging.getLoggerClass(), methodName, logForLevel)
+    setattr(logging, methodName, logToRoot)
+addLoggingLevel("TRACE", 5)
 
-    def colorPalette(self, levelno):
-        
-        c  = [
-            fg('white'),
-            fg('slate_blue_3a'),
-            fg('aquamarine_3'),
-            fg('gold_3b'),
-            fg('red'),
-            fg('hot_pink_1a'),
-        ]
-        if levelno < 10:
-            color = c[0]
-        elif levelno < 20:
-            color = c[1]
-        elif levelno < 30:
-            color = c[2]
-        elif levelno < 40:
-            color = c[3]
-        elif levelno < 50:
-            color = c[4]
-        else:
-            color = c[5]
-
-        bcolor = color + attr("bold")
-            
-        return {
-            'clvl': color,
-            'cblvl': bcolor,
-            'cend': attr("reset"),
-        }
-
-    def format(self, record):
-        palette = self.colorPalette(record.levelno)
-        d = record.__dict__
-        d["message"] = d["msg"]
-        return self._fmt.format(**{**d, **palette})
+logzero.DEFAULT_COLORS = {
+    logging.TRACE: fg(117),
+    logging.DEBUG: fg(31),
+    logging.INFO: fg('aquamarine_3'),
+    logging.WARNING: fg(186),
+    logging.ERROR: fg(168),
+    logging.CRITICAL: fg(200)
+}
 
 
-class SimpleStreamFormatter(StreamFormatter):
-    fmt = "" \
-        + "{cblvl}{levelname}{cend}"\
-        + " | {clvl}{message}{cend}"
+def setup_logger(
+    name='mylogger',
+    logfile=None,
+    level=logging.DEBUG,
+    formatter=None,
+    maxBytes=0,
+    backupCount=0,
+    fileLoglevel=None,
+    disableStderrLogger=False,
+    isRootLogger=False,
+    json=False,
+    json_ensure_ascii=False,
+    ):
 
+    logger = logzero.setup_logger(
+        name=name,
+        logfile=logfile,
+        level=level,
+        formatter=formatter,
+        maxBytes=maxBytes,
+        backupCount=backupCount,
+        fileLoglevel=fileLoglevel,
+        disableStderrLogger=disableStderrLogger,
+        isRootLogger=isRootLogger,
+        json=json,
+        json_ensure_ascii=json_ensure_ascii,
+        )
 
-class FileFormatter(logging.Formatter):
-    fmt = "{asctime} | {levelname} | {filename} | {funcName} | {message}"
+    if logfile:
+        shandler, fhandler = logger.handlers
+    else:
+        shandler, fhandler = logger.handlers[0], None
 
-    def __init__(self, fmt=None, datefmt=None):
-        super().__init__(fmt=fmt or self.fmt, style="{", datefmt=datefmt)
+    #stream
+    # looks like formatter is cached from init
+    shandler.formatter._colors = logzero.DEFAULT_COLORS
 
+    #file
+    if fhandler:
+        formatter = logging.Formatter(DEFAULT_FMT) #remove color
+        fhandler.setFormatter(formatter)
 
-class StreamHandler(logging.StreamHandler):
-    
-    def __init__(self, handler=sys.stderr, formatter=None):
-        super().__init__(handler)
-        if not formatter:
-            formatter = StreamFormatter()
-        self.setFormatter(formatter)
+    return logger
 
-
-class FileHandler(logging.FileHandler):
-    def __init__(self, fdescr, formatter=None):
-        super().__init__(fdescr)
-        if not formatter:
-            formatter = FileFormatter()
-        self.setFormatter(formatter)
-
-
-class Logging:
-    @staticmethod
-    def getLogger(
-            path, 
-            level=logging.DEBUG,
-
-            file_handler=True,
-            stream_handler=True,
-            stream_formatter=None,
-            ):
-        logger = logging.getLogger(path)
-        logger.setLevel(level)
-
-        if file_handler:
-            logger.addHandler(FileHandler(path))
-
-        if stream_handler:
-            if stream_formatter:
-                handler = StreamHandler(formatter=stream_formatter)
-            else:
-                handler = StreamHandler()
-            logger.addHandler(handler)
-
-        logger.propagate = False
-        return logger
-        
 
 if __name__ == '__main__':
 
-    logger = Logging.getLogger(
-        "test.log", 
-        stream_formatter=SimpleStreamFormatter()
-        )
-    logger.log(9, "HII") # suppressed
-    logger.log(11, "HII")
-    logger.debug("HII")
-    logger.info("HII")
-    logger.warning("HII")
-    logger.error("HII")
-    logger.critical("HII")
+    logger = setup_logger("app", level=logging.TRACE, logfile='test.log')
+
+    logger.trace("trace")
+    logger.debug("debug")
+    logger.info("info")
+    logger.warning("warn")
+    logger.error("error")
+    logger.critical("critical")
+
+    class CustomAdapter(logging.LoggerAdapter):
+        def process(self, msg, kwargs):
+            my_context = kwargs.pop('id', self.extra['id'])
+            return '[id=%s]' % (my_context), kwargs
+
+    formatter = logging.Formatter("%(message)s")
+
+    diff = logzero.setup_logger(name="diff", formatter=formatter)
+    diff = CustomAdapter(diff, {"id": None})
+    diff.debug("", id=12)
+
 

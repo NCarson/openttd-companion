@@ -1,285 +1,48 @@
-HIII
-2023-05-07 16:42:09,004 — test — DEBUG — HIII
-2023-05-07 16:43:38,163 — test — DEBUG — HII
-2023-05-07 16:53:30,181 — test — DEBUG — HII
-fixme
-fixme
-fixme
-fixme
-2023-05-07 17:10:19,546 — test — DEBUG — HII
-2023-05-07 17:10:58,396 — test — DEBUG — HII
-2023-05-07 17:11:45,701 — test — DEBUG — HII
-2023-05-07 17:13:20,333 — test — DEBUG — HII
-2023-05-07 17:14:49,333 — test — DEBUG — HII
-2023-05-07 17:16:25,645 — test — DEBUG — HII
-2023-05-07 17:20:11,130 — test — DEBUG — HII
-2023-05-07 17:20:38,685 — test — DEBUG — HII
-2023-05-07 17:22:23,905 — test — DEBUG — HII
-2023-05-07 17:22:44,171 — test — DEBUG — HII
-2023-05-07 17:24:51,828 — test — DEBUG — HII
-2023-05-07 17:40:19,281 — test — DEBUG — HII
-2023-05-07 17:40:51,852 — test — DEBUG — HII
-2023-05-07 17:41:01,223 — test — DEBUG — HII
-2023-05-07 17:41:15,461 — test — DEBUG — HII
-2023-05-07 17:41:42,853 — test — DEBUG — HII
-2023-05-07 17:42:20,712 — test — DEBUG — HII
-2023-05-07 17:42:45,144 — test — DEBUG — HII
-2023-05-07 17:42:55,529 — test — DEBUG — HII
-2023-05-07 17:43:25,670 — test — DEBUG — HII
-2023-05-07 17:43:59,400 — test — DEBUG — HII
-2023-05-07 17:44:26,043 — test — DEBUG — HII
-2023-05-07 17:45:39,489 — test — DEBUG — HII
-2023-05-07 17:48:13,719 — test — DEBUG — HII
-2023-05-07 17:53:07,925 — test — DEBUG — HII
-2023-05-07 17:54:34,709 — test — DEBUG — HII
-2023-05-07 17:54:57,908 — test — DEBUG — HII
-2023-05-07 17:55:08,606 — test — DEBUG — HII
-2023-05-07 17:55:50,892 — test — DEBUG — HII
-2023-05-07 17:56:18,112 — test — DEBUG — HII
-2023-05-07 17:57:15,679 — test — DEBUG — HII
-2023-05-07 18:05:42,046 — test — DEBUG — HII
-2023-05-07 18:05:57,864 — test — DEBUG — HII
-2023-05-07 18:07:52,979 — test — DEBUG — HII
-2023-05-07 18:08:07,859 — test — DEBUG — HII
-2023-05-07 18:10:33,880 | <module> | DEBUG | HII
-2023-05-07 18:11:18,042 | <module> | DEBUG | HII
-2023-05-07 18:11:31,131 | <module> | DEBUG | HII
-2023-05-07 18:12:16,711 | <module> | DEBUG | HII
-2023-05-07 18:12:25,691 | <module> | DEBUG | HII
-2023-05-07 18:12:44,560 | <module> | DEBUG | HII
-2023-05-07 18:13:26,661 | <module> | DEBUG | HII
-2023-05-07 18:15:15,740 | <module> | DEBUG | HII
-2023-05-07 18:16:15,983 | DEBUG | logger.py | <module> | HII
-2023-05-07 18:37:55,572 | DEBUG | logger.py | <module> | HII
-2023-05-07 19:07:20,051 | DEBUG | logger.py | <module> | HII
-2023-05-07 19:20:16,240 | DEBUG | logger.py | <module> | HII
-2023-05-07 19:20:16,241 | INFO | logger.py | <module> | HII
-2023-05-07 19:20:16,241 | WARNING | logger.py | <module> | HII
-2023-05-07 19:20:16,241 | ERROR | logger.py | <module> | HII
-2023-05-07 19:20:16,242 | CRITICAL | logger.py | <module> | HII
-2023-05-07 19:21:26,159 | DEBUG | logger.py | <module> | HII
-2023-05-07 19:21:26,160 | INFO | logger.py | <module> | HII
-2023-05-07 19:21:26,160 | WARNING | logger.py | <module> | HII
-2023-05-07 19:21:26,161 | ERROR | logger.py | <module> | HII
-2023-05-07 19:21:26,161 | CRITICAL | logger.py | <module> | HII
-2023-05-07 19:21:50,730 | DEBUG | logger.py | <module> | HII
-2023-05-07 19:21:50,731 | INFO | logger.py | <module> | HII
-2023-05-07 19:21:50,731 | WARNING | logger.py | <module> | HII
-2023-05-07 19:21:50,731 | ERROR | logger.py | <module> | HII
-2023-05-07 19:21:50,731 | CRITICAL | logger.py | <module> | HII
-2023-05-07 19:22:46,622 | DEBUG | logger.py | <module> | HII
-2023-05-07 19:22:46,623 | INFO | logger.py | <module> | HII
-2023-05-07 19:22:46,623 | WARNING | logger.py | <module> | HII
-2023-05-07 19:22:46,624 | ERROR | logger.py | <module> | HII
-2023-05-07 19:22:46,624 | CRITICAL | logger.py | <module> | HII
-2023-05-07 19:24:21,337 | DEBUG | logger.py | <module> | HII
-2023-05-07 19:24:21,338 | INFO | logger.py | <module> | HII
-2023-05-07 19:24:21,338 | WARNING | logger.py | <module> | HII
-2023-05-07 19:24:21,339 | ERROR | logger.py | <module> | HII
-2023-05-07 19:24:21,339 | CRITICAL | logger.py | <module> | HII
-2023-05-07 19:24:58,210 | DEBUG | logger.py | <module> | HII
-2023-05-07 19:24:58,211 | INFO | logger.py | <module> | HII
-2023-05-07 19:24:58,211 | WARNING | logger.py | <module> | HII
-2023-05-07 19:24:58,211 | ERROR | logger.py | <module> | HII
-2023-05-07 19:24:58,212 | CRITICAL | logger.py | <module> | HII
-2023-05-07 19:25:15,591 | DEBUG | logger.py | <module> | HII
-2023-05-07 19:25:15,592 | INFO | logger.py | <module> | HII
-2023-05-07 19:25:15,592 | WARNING | logger.py | <module> | HII
-2023-05-07 19:25:15,593 | ERROR | logger.py | <module> | HII
-2023-05-07 19:25:15,593 | CRITICAL | logger.py | <module> | HII
-2023-05-07 19:28:21,937 | DEBUG | logger.py | <module> | HII
-2023-05-07 19:28:21,938 | INFO | logger.py | <module> | HII
-2023-05-07 19:28:21,938 | WARNING | logger.py | <module> | HII
-2023-05-07 19:28:21,939 | ERROR | logger.py | <module> | HII
-2023-05-07 19:28:21,939 | CRITICAL | logger.py | <module> | HII
-2023-05-07 19:28:54,660 | DEBUG | logger.py | <module> | HII
-2023-05-07 19:28:54,661 | INFO | logger.py | <module> | HII
-2023-05-07 19:28:54,662 | WARNING | logger.py | <module> | HII
-2023-05-07 19:28:54,662 | ERROR | logger.py | <module> | HII
-2023-05-07 19:28:54,663 | CRITICAL | logger.py | <module> | HII
-2023-05-07 19:29:26,306 | DEBUG | logger.py | <module> | HII
-2023-05-07 19:29:26,308 | INFO | logger.py | <module> | HII
-2023-05-07 19:29:26,308 | WARNING | logger.py | <module> | HII
-2023-05-07 19:29:26,308 | ERROR | logger.py | <module> | HII
-2023-05-07 19:29:26,309 | CRITICAL | logger.py | <module> | HII
-2023-05-07 19:30:09,839 | DEBUG | logger.py | <module> | HII
-2023-05-07 19:30:09,840 | INFO | logger.py | <module> | HII
-2023-05-07 19:30:09,840 | WARNING | logger.py | <module> | HII
-2023-05-07 19:30:09,841 | ERROR | logger.py | <module> | HII
-2023-05-07 19:30:09,841 | CRITICAL | logger.py | <module> | HII
-2023-05-07 19:30:43,558 | DEBUG | logger.py | <module> | HII
-2023-05-07 19:30:43,559 | INFO | logger.py | <module> | HII
-2023-05-07 19:30:43,559 | WARNING | logger.py | <module> | HII
-2023-05-07 19:30:43,560 | ERROR | logger.py | <module> | HII
-2023-05-07 19:30:43,560 | CRITICAL | logger.py | <module> | HII
-2023-05-07 19:31:10,056 | DEBUG | logger.py | <module> | HII
-2023-05-07 19:31:10,057 | INFO | logger.py | <module> | HII
-2023-05-07 19:31:10,058 | WARNING | logger.py | <module> | HII
-2023-05-07 19:31:10,058 | ERROR | logger.py | <module> | HII
-2023-05-07 19:31:10,059 | CRITICAL | logger.py | <module> | HII
-2023-05-07 19:34:00,334 | DEBUG | logger.py | <module> | HII
-2023-05-07 19:34:00,338 | INFO | logger.py | <module> | HII
-2023-05-07 19:34:00,339 | WARNING | logger.py | <module> | HII
-2023-05-07 19:34:00,341 | ERROR | logger.py | <module> | HII
-2023-05-07 19:34:00,342 | CRITICAL | logger.py | <module> | HII
-2023-05-07 19:34:13,676 | DEBUG | logger.py | <module> | HII
-2023-05-07 19:34:13,677 | INFO | logger.py | <module> | HII
-2023-05-07 19:34:13,677 | WARNING | logger.py | <module> | HII
-2023-05-07 19:34:13,677 | ERROR | logger.py | <module> | HII
-2023-05-07 19:34:13,678 | CRITICAL | logger.py | <module> | HII
-2023-05-07 19:34:59,775 | DEBUG | logger.py | <module> | HII
-2023-05-07 19:34:59,776 | INFO | logger.py | <module> | HII
-2023-05-07 19:34:59,776 | WARNING | logger.py | <module> | HII
-2023-05-07 19:34:59,777 | ERROR | logger.py | <module> | HII
-2023-05-07 19:34:59,778 | CRITICAL | logger.py | <module> | HII
-2023-05-07 19:35:15,360 | DEBUG | logger.py | <module> | HII
-2023-05-07 19:35:15,362 | INFO | logger.py | <module> | HII
-2023-05-07 19:35:15,362 | WARNING | logger.py | <module> | HII
-2023-05-07 19:35:15,363 | ERROR | logger.py | <module> | HII
-2023-05-07 19:35:15,364 | CRITICAL | logger.py | <module> | HII
-2023-05-08 04:37:01,357 | DEBUG | logger.py | <module> | HII
-2023-05-08 04:37:01,359 | INFO | logger.py | <module> | HII
-2023-05-08 04:37:01,360 | WARNING | logger.py | <module> | HII
-2023-05-08 04:37:01,361 | ERROR | logger.py | <module> | HII
-2023-05-08 04:37:01,362 | CRITICAL | logger.py | <module> | HII
-2023-05-08 04:42:31,068 | Level 11 | logger.py | <module> | HII
-2023-05-08 04:42:31,070 | DEBUG | logger.py | <module> | HII
-2023-05-08 04:42:31,070 | INFO | logger.py | <module> | HII
-2023-05-08 04:42:31,071 | WARNING | logger.py | <module> | HII
-2023-05-08 04:42:31,071 | ERROR | logger.py | <module> | HII
-2023-05-08 04:42:31,072 | CRITICAL | logger.py | <module> | HII
-2023-05-08 04:42:39,688 | Level 11 | logger.py | <module> | HII
-2023-05-08 04:42:39,689 | DEBUG | logger.py | <module> | HII
-2023-05-08 04:42:39,689 | INFO | logger.py | <module> | HII
-2023-05-08 04:42:39,690 | WARNING | logger.py | <module> | HII
-2023-05-08 04:42:39,690 | ERROR | logger.py | <module> | HII
-2023-05-08 04:42:39,691 | CRITICAL | logger.py | <module> | HII
-2023-05-08 04:43:06,216 | WARNING | logger.py | <module> | HII
-2023-05-08 04:43:06,217 | ERROR | logger.py | <module> | HII
-2023-05-08 04:43:06,218 | CRITICAL | logger.py | <module> | HII
-2023-05-08 04:44:51,951 | Level 11 | logger.py | <module> | HII
-2023-05-08 04:44:51,952 | DEBUG | logger.py | <module> | HII
-2023-05-08 04:44:51,952 | INFO | logger.py | <module> | HII
-2023-05-08 04:44:51,953 | WARNING | logger.py | <module> | HII
-2023-05-08 04:44:51,953 | ERROR | logger.py | <module> | HII
-2023-05-08 04:44:51,954 | CRITICAL | logger.py | <module> | HII
-2023-05-08 04:45:21,822 | Level 11 | logger.py | <module> | HII
-2023-05-08 04:45:21,823 | DEBUG | logger.py | <module> | HII
-2023-05-08 04:45:21,824 | INFO | logger.py | <module> | HII
-2023-05-08 04:45:21,824 | WARNING | logger.py | <module> | HII
-2023-05-08 04:45:21,825 | ERROR | logger.py | <module> | HII
-2023-05-08 04:45:21,825 | CRITICAL | logger.py | <module> | HII
-2023-05-08 04:45:55,150 | Level 11 | logger.py | <module> | HII
-2023-05-08 04:45:55,150 | DEBUG | logger.py | <module> | HII
-2023-05-08 04:45:55,150 | INFO | logger.py | <module> | HII
-2023-05-08 04:45:55,150 | WARNING | logger.py | <module> | HII
-2023-05-08 04:45:55,150 | ERROR | logger.py | <module> | HII
-2023-05-08 04:45:55,151 | CRITICAL | logger.py | <module> | HII
-2023-05-08 04:47:18,894 | Level 11 | logger.py | <module> | HII
-2023-05-08 04:47:18,894 | DEBUG | logger.py | <module> | HII
-2023-05-08 04:47:18,894 | INFO | logger.py | <module> | HII
-2023-05-08 04:47:18,894 | WARNING | logger.py | <module> | HII
-2023-05-08 04:47:18,895 | ERROR | logger.py | <module> | HII
-2023-05-08 04:47:18,895 | CRITICAL | logger.py | <module> | HII
-2023-05-08 04:48:29,230 | Level 11 | logger.py | <module> | HII
-2023-05-08 04:48:29,231 | DEBUG | logger.py | <module> | HII
-2023-05-08 04:48:29,231 | INFO | logger.py | <module> | HII
-2023-05-08 04:48:29,231 | WARNING | logger.py | <module> | HII
-2023-05-08 04:48:29,231 | ERROR | logger.py | <module> | HII
-2023-05-08 04:48:29,231 | CRITICAL | logger.py | <module> | HII
-2023-05-08 04:48:40,111 | Level 11 | logger.py | <module> | HII
-2023-05-08 04:48:40,111 | DEBUG | logger.py | <module> | HII
-2023-05-08 04:48:40,112 | INFO | logger.py | <module> | HII
-2023-05-08 04:48:40,112 | WARNING | logger.py | <module> | HII
-2023-05-08 04:48:40,112 | ERROR | logger.py | <module> | HII
-2023-05-08 04:48:40,112 | CRITICAL | logger.py | <module> | HII
-2023-05-08 04:48:43,174 | Level 11 | logger.py | <module> | HII
-2023-05-08 04:48:43,175 | DEBUG | logger.py | <module> | HII
-2023-05-08 04:48:43,175 | INFO | logger.py | <module> | HII
-2023-05-08 04:48:43,175 | WARNING | logger.py | <module> | HII
-2023-05-08 04:48:43,175 | ERROR | logger.py | <module> | HII
-2023-05-08 04:48:43,175 | CRITICAL | logger.py | <module> | HII
-2023-05-08 04:49:30,966 | Level 11 | logger.py | <module> | HII
-2023-05-08 04:49:30,970 | DEBUG | logger.py | <module> | HII
-2023-05-08 04:49:30,972 | INFO | logger.py | <module> | HII
-2023-05-08 04:49:30,975 | WARNING | logger.py | <module> | HII
-2023-05-08 04:49:30,977 | ERROR | logger.py | <module> | HII
-2023-05-08 04:49:30,979 | CRITICAL | logger.py | <module> | HII
-2023-05-08 04:49:50,255 | Level 11 | logger.py | <module> | HII
-2023-05-08 04:49:50,256 | DEBUG | logger.py | <module> | HII
-2023-05-08 04:49:50,257 | INFO | logger.py | <module> | HII
-2023-05-08 04:49:50,257 | WARNING | logger.py | <module> | HII
-2023-05-08 04:49:50,258 | ERROR | logger.py | <module> | HII
-2023-05-08 04:49:50,259 | CRITICAL | logger.py | <module> | HII
-2023-05-08 04:50:03,465 | Level 11 | logger.py | <module> | HII
-2023-05-08 04:50:03,466 | DEBUG | logger.py | <module> | HII
-2023-05-08 04:50:03,466 | INFO | logger.py | <module> | HII
-2023-05-08 04:50:03,467 | WARNING | logger.py | <module> | HII
-2023-05-08 04:50:03,468 | ERROR | logger.py | <module> | HII
-2023-05-08 04:50:03,469 | CRITICAL | logger.py | <module> | HII
-2023-05-08 04:50:36,725 | Level 11 | logger.py | <module> | HII
-2023-05-08 04:50:36,726 | DEBUG | logger.py | <module> | HII
-2023-05-08 04:50:36,727 | INFO | logger.py | <module> | HII
-2023-05-08 04:50:36,727 | WARNING | logger.py | <module> | HII
-2023-05-08 04:50:36,728 | ERROR | logger.py | <module> | HII
-2023-05-08 04:50:36,729 | CRITICAL | logger.py | <module> | HII
-2023-05-08 04:55:56,940 | Level 11 | logger.py | <module> | HII
-2023-05-08 04:55:56,941 | DEBUG | logger.py | <module> | HII
-2023-05-08 04:55:56,942 | INFO | logger.py | <module> | HII
-2023-05-08 04:55:56,943 | WARNING | logger.py | <module> | HII
-2023-05-08 04:55:56,943 | ERROR | logger.py | <module> | HII
-2023-05-08 04:55:56,944 | CRITICAL | logger.py | <module> | HII
-2023-05-08 04:59:30,827 | Level 11 | logger.py | <module> | HII
-2023-05-08 04:59:30,828 | DEBUG | logger.py | <module> | HII
-2023-05-08 04:59:30,828 | INFO | logger.py | <module> | HII
-2023-05-08 04:59:30,828 | WARNING | logger.py | <module> | HII
-2023-05-08 04:59:30,828 | ERROR | logger.py | <module> | HII
-2023-05-08 04:59:30,828 | CRITICAL | logger.py | <module> | HII
-2023-05-08 05:03:59,055 | Level 11 | logger.py | <module> | HII
-2023-05-08 05:03:59,059 | DEBUG | logger.py | <module> | HII
-2023-05-08 05:03:59,061 | INFO | logger.py | <module> | HII
-2023-05-08 05:03:59,070 | WARNING | logger.py | <module> | HII
-2023-05-08 05:03:59,072 | ERROR | logger.py | <module> | HII
-2023-05-08 05:03:59,074 | CRITICAL | logger.py | <module> | HII
-2023-05-08 05:05:20,694 | Level 11 | logger.py | <module> | HII
-2023-05-08 05:05:20,698 | DEBUG | logger.py | <module> | HII
-2023-05-08 05:05:20,700 | INFO | logger.py | <module> | HII
-2023-05-08 05:05:20,702 | WARNING | logger.py | <module> | HII
-2023-05-08 05:05:20,704 | ERROR | logger.py | <module> | HII
-2023-05-08 05:05:20,706 | CRITICAL | logger.py | <module> | HII
-2023-05-08 05:20:19,853 | Level 11 | logger.py | <module> | HII
-2023-05-08 05:20:19,854 | DEBUG | logger.py | <module> | HII
-2023-05-08 05:20:19,855 | INFO | logger.py | <module> | HII
-2023-05-08 05:20:19,855 | WARNING | logger.py | <module> | HII
-2023-05-08 05:20:19,856 | ERROR | logger.py | <module> | HII
-2023-05-08 05:20:19,856 | CRITICAL | logger.py | <module> | HII
-2023-05-08 05:26:27,625 | INFO | start_oppentd.py | <module> | OpenTTD Game Observer UDP Server v0.0.1
-
-2023-05-08 05:26:27,626 | INFO | start_oppentd.py | <module> | starting udp server on 127.0.0.1:3978 ...
-
-2023-05-08 05:26:27,626 | INFO | start_oppentd.py | <module> | running command '/home/billwilsonhome/public/openttd-13.0/build/openttd -D -dscript=3' ...
-
-2023-05-08 05:26:31,118 | DEBUG | start_oppentd.py | sendMessage | sending msg on ('127.0.0.1', 3978): b'{"map": {"y": 64, "x' ...
-2023-05-08 05:28:49,466 | INFO | start_oppentd.py | <module> | OpenTTD Game Observer UDP Server v0.0.1
-
-2023-05-08 05:28:49,467 | INFO | start_oppentd.py | <module> | starting udp server on 127.0.0.1:3978 ...
-
-2023-05-08 05:28:49,467 | INFO | start_oppentd.py | <module> | running command '/home/billwilsonhome/public/openttd-13.0/build/openttd -D -dscript=3' ...
-
-2023-05-08 05:28:52,492 | DEBUG | start_oppentd.py | sendMessage | sending msg on ('127.0.0.1', 3978): b'{"map": {"y": 64, "x' ...
-2023-05-08 05:29:48,370 | INFO | start_oppentd.py | <module> | OpenTTD Game Observer UDP Server v0.0.1
-2023-05-08 05:29:48,371 | INFO | start_oppentd.py | <module> | starting udp server on 127.0.0.1:3978 ...
-2023-05-08 05:29:48,371 | INFO | start_oppentd.py | <module> | running command '/home/billwilsonhome/public/openttd-13.0/build/openttd -D -dscript=3' ...
-2023-05-08 05:29:51,329 | DEBUG | start_oppentd.py | sendMessage | sending msg on ('127.0.0.1', 3978): b'{"map": {"y": 64, "x' ...
-2023-05-08 05:32:52,933 | INFO | start_oppentd.py | <module> | OpenTTD Game Observer UDP Server v0.0.1
-2023-05-08 05:32:52,933 | INFO | start_oppentd.py | <module> | OpenTTD Game Observer UDP Server v0.0.1
-2023-05-08 05:32:52,934 | INFO | start_oppentd.py | <module> | starting udp server on 127.0.0.1:3978 ...
-2023-05-08 05:32:52,934 | INFO | start_oppentd.py | <module> | starting udp server on 127.0.0.1:3978 ...
-2023-05-08 05:32:52,935 | INFO | start_oppentd.py | <module> | running command '/home/billwilsonhome/public/openttd-13.0/build/openttd -D -dscript=3' ...
-2023-05-08 05:32:52,935 | INFO | start_oppentd.py | <module> | running command '/home/billwilsonhome/public/openttd-13.0/build/openttd -D -dscript=3' ...
-2023-05-08 05:33:05,791 | INFO | start_oppentd.py | <module> | OpenTTD Game Observer UDP Server v0.0.1
-2023-05-08 05:33:05,791 | INFO | start_oppentd.py | <module> | OpenTTD Game Observer UDP Server v0.0.1
-2023-05-08 05:33:05,793 | INFO | start_oppentd.py | <module> | starting udp server on 127.0.0.1:3978 ...
-2023-05-08 05:33:05,793 | INFO | start_oppentd.py | <module> | starting udp server on 127.0.0.1:3978 ...
-2023-05-08 05:33:05,795 | INFO | start_oppentd.py | <module> | running command '/home/billwilsonhome/public/openttd-13.0/build/openttd -D -dscript=3' ...
-2023-05-08 05:33:05,795 | INFO | start_oppentd.py | <module> | running command '/home/billwilsonhome/public/openttd-13.0/build/openttd -D -dscript=3' ...
+[T 2023-05-08 13:11:04,838 mylogger:99] trace
+[D 2023-05-08 13:11:04,839 mylogger:100] debug
+[I 2023-05-08 13:11:04,839 mylogger:101] info
+[W 2023-05-08 13:11:04,840 mylogger:102] warn
+[E 2023-05-08 13:11:04,840 mylogger:103] error
+[C 2023-05-08 13:11:04,841 mylogger:104] critical
+[T 2023-05-08 13:24:12,869 mylogger:99] trace
+[D 2023-05-08 13:24:12,870 mylogger:100] debug
+[I 2023-05-08 13:24:12,871 mylogger:101] info
+[W 2023-05-08 13:24:12,871 mylogger:102] warn
+[E 2023-05-08 13:24:12,872 mylogger:103] error
+[C 2023-05-08 13:24:12,872 mylogger:104] critical
+[T 2023-05-08 13:25:11,794 mylogger:99] trace
+[D 2023-05-08 13:25:11,795 mylogger:100] debug
+[I 2023-05-08 13:25:11,795 mylogger:101] info
+[W 2023-05-08 13:25:11,795 mylogger:102] warn
+[E 2023-05-08 13:25:11,796 mylogger:103] error
+[C 2023-05-08 13:25:11,796 mylogger:104] critical
+[T 2023-05-08 13:25:26,292 mylogger:99] trace
+[D 2023-05-08 13:25:26,292 mylogger:100] debug
+[I 2023-05-08 13:25:26,292 mylogger:101] info
+[W 2023-05-08 13:25:26,293 mylogger:102] warn
+[E 2023-05-08 13:25:26,293 mylogger:103] error
+[C 2023-05-08 13:25:26,293 mylogger:104] critical
+[T 2023-05-08 13:25:38,350 mylogger:99] trace
+[D 2023-05-08 13:25:38,351 mylogger:100] debug
+[I 2023-05-08 13:25:38,351 mylogger:101] info
+[W 2023-05-08 13:25:38,351 mylogger:102] warn
+[E 2023-05-08 13:25:38,351 mylogger:103] error
+[C 2023-05-08 13:25:38,352 mylogger:104] critical
+[T 2023-05-08 13:26:12,994 mylogger:99] trace
+[D 2023-05-08 13:26:12,994 mylogger:100] debug
+[I 2023-05-08 13:26:12,995 mylogger:101] info
+[W 2023-05-08 13:26:12,995 mylogger:102] warn
+[E 2023-05-08 13:26:12,995 mylogger:103] error
+[C 2023-05-08 13:26:12,995 mylogger:104] critical
+[T 2023-05-08 13:26:54,985 mylogger:99] trace
+[D 2023-05-08 13:26:54,986 mylogger:100] debug
+[I 2023-05-08 13:26:54,986 mylogger:101] info
+[W 2023-05-08 13:26:54,986 mylogger:102] warn
+[E 2023-05-08 13:26:54,987 mylogger:103] error
+[C 2023-05-08 13:26:54,987 mylogger:104] critical
+[T 2023-05-08 13:27:01,358 mylogger:99] trace
+[D 2023-05-08 13:27:01,359 mylogger:100] debug
+[I 2023-05-08 13:27:01,359 mylogger:101] info
+[W 2023-05-08 13:27:01,359 mylogger:102] warn
+[E 2023-05-08 13:27:01,359 mylogger:103] error
+[C 2023-05-08 13:27:01,359 mylogger:104] critical
