@@ -17,10 +17,9 @@ from PyQt5.QtCore import(
     QTimer, QFile, QSaveFile,
 )
 
-import ttd_companion.version as version
-import ttd_companion.qrc_resources as qrc_resources
+import openttd_companion.__init__ as init
+import openttd_companion.gui.qrc_resources as qrc_resources
 from .main_widget import MainWidget
-from .server.ttd_output_parser import TTDOutputParser
 
 DEBUG=True
 
@@ -39,8 +38,6 @@ class MainWindow(QMainWindow):
         self._map_dict = None
         self._current_path = None
 
-            
-
         self._widget = MainWidget(*self.starting_map)
         self.setCentralWidget(self._widget)
 
@@ -48,34 +45,11 @@ class MainWindow(QMainWindow):
         self._actions = self._createActions()
         self._createMenus(self._actions)
         #self.setGeometry(300, 300, 350, 150)
-        self.setWindowTitle(tr(version.title))
+        self.setWindowTitle(tr(init.__title__))
         self.show()
 
-        self.parser = TTDOutputParser(self.onMapUpdate)
-
-        # XXX we HAVE to set the file to non-blocking or it will just hang
-        # unfortunately this is not portable to windows
-        self.stdin = open(sys.stdin.fileno())
-        flags = fcntl.fcntl(self.stdin, fcntl.F_GETFL)
-        fcntl.fcntl(self.stdin, fcntl.F_SETFL, flags | os.O_NONBLOCK)
-
-        # https://doc.qt.io/qt-6/qiodevicebase.html:
-        # ... for example, QTcpSocket does not support Unbuffered mode, 
-        # and limitations in the native API prevent QFile from supporting 
-        # Unbuffered on Windows.
-        # I cant even get the below to non-block in linux!
-
-        #self.stdin = QFile()
-        #self.stdin.open(
-        #    sys.stdin.fileno(),
-        #    QFile.ReadOnly | QFile.Unbuffered | QFile.Text
-        #    )
-
-        # other workarounds:
-        # - start it as a sub-process in qt.
-
         timer = QTimer(self)
-        timer.timeout.connect(self.onPollStdin)
+        timer.timeout.connect(self.onPollUdp)
         timer.start(self.polling_ms)
 
         if options.map:
@@ -141,7 +115,29 @@ class MainWindow(QMainWindow):
             toolbar.addAction(action)
         return toolbar
 
+    def onPollUdp(self):
+
+        import socket
+        UDP_IP = "127.0.0.1" #FIXME
+        UDP_PORT = 6789
+        BUF_SIZE=1024
+
+        sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # UDP
+
+        sock.bind((UDP_IP, UDP_PORT))
+        sock.setblocking(0)
+
+        try:
+            msg = sock.recv(BUF_SIZE)
+            msg = msg.decode("utf-8")
+            print("received message: %s" % repr(msg))
+        except BlockingIOError:
+            print("blocking io error") #FIXME
+            
+
+
     def onPollStdin(self):
+        from .server.ttd_output_parser import TTDOutputParser #FIXME this is broken
         
         n = 0
         data = ""
@@ -216,8 +212,8 @@ class HelpMenu(QMenu):
         self.addAction(action)
 
     def getAbout(self):
-        title = "{} {}".format(version.title, version.version)
-        QMessageBox.about(self.window, title, version.about)
+        title = "{} {}".format(init.__title__, init.__version__)
+        QMessageBox.about(self.window, title, "FIXME")
 
 class ViewMenu(QMenu): #FIXME Toolbar Items reference the menu and the toolbar for visibility
     # we will probably have to recreate the toolbar

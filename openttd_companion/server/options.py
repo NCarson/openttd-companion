@@ -4,44 +4,55 @@ import shlex
 from pathlib import Path
 from os.path import expanduser
 
-import version
+import openttd_companion.__init__ as init
 
-
-def parse():
+def parse(config):
     parser = argparse.ArgumentParser(
-        usage=f'{sys.argv[0]} [OPTION, ...] "openttd [OPTION, ...]"',
+        usage=f'{sys.argv[0]} [OPTION, ...] ["openttd [OPTION, ...]"]',
         description="OpenTTD Game Observer UDP Server"
     )
     parser.add_argument(
-        "-v", "--version", action="version",
-        version = f"{parser.prog} {version.version}"
+        "openttd_cmd", action="store",
+        default=config.openttd_cmd,
+        nargs="?",
+        help = "quoted path to openttd executable with options; default=%(repr(default))s"
     )
 
     parser.add_argument(
-        "openttd", action="store",
-        help = "quoted path to openttd executable with options; like \"openttd -D\""
+        "-v", "--version", action="version",
+        version = f"{parser.prog} {init.__version__}"
     )
 
     parser.add_argument(
         "--host", 
-        default="127.0.0.1",
+        default=config.udp_host,
         help="hostname of this server (not opentdd's); default=%(default)s",
     )
+
     parser.add_argument(
         "--port", 
-        default=3978,
+        default=config.udp_port,
         type=int,
         help="port number of this server (not openttd's); default=%(default)s",
     )
+
     parser.add_argument(
-        "--ids", 
+        "--bufsize", 
+        default=config.udp_buffer_size,
+        help="packet size of this server (not openttd's); default=%(default)s",
+    )
+
+    parser.add_argument(
+        "--ids",  ##FIXME lest figure this on loading. Give a shout when script loads
+        default=config.script_ids,
         help="comma delimited list of script ids to follow; like 1,2,3; "\
             + "dont set to monitor all scripts",
     )
+
     args = parser.parse_args()
 
     ttd_args = []
-    for arg in shlex.split(args.openttd):
+    for arg in shlex.split(args.openttd_cmd):
         if not ttd_args:
             p = Path(expanduser(arg)).resolve()
             if not p.exists():
@@ -51,7 +62,7 @@ def parse():
             ttd_args.append(arg)
 
     if "-d" not in ttd_args and "--debug" not in ttd_args: # make sure we listen to game script
-        ttd_args.append("-dscript=3")
+        ttd_args.append("-dscript=4")
 
     if args.ids:
         args.ids = [int(i) for i in args.ids.split(",")]
