@@ -10,11 +10,11 @@ def run(args):
 
     output_parser = Parser(args)
     logger.info(f"{init.__title__} Server {init.__version__}")
+    logger.info("running command '{}' ...".format(" ".join(args.openttd_cmd)))
 
-    logger.info("running command '{}' ...".format(" ".join(args.openttd)))
     try:
         with subprocess.Popen(
-            args.openttd, 
+            args.openttd_cmd, 
             stdout=subprocess.PIPE, 
             stderr=subprocess.STDOUT,
             encoding="utf-8",

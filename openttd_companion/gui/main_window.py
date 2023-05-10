@@ -1,7 +1,5 @@
-import sys
-import fcntl
-import os
 import json
+import socket
 
 from PyQt5.QtWidgets import (
     QApplication, QWidget, QMainWindow,
@@ -14,14 +12,17 @@ from PyQt5.QtGui import(
 )
 from PyQt5.QtCore import(
     Qt, 
-    QTimer, QFile, QSaveFile,
+    QTimer, #QFile, QSaveFile,
+    QProcess,
 )
 
 import openttd_companion.__init__ as init
+import openttd_companion.app_logging as mylogger
 import openttd_companion.gui.qrc_resources as qrc_resources
 from .main_widget import MainWidget
 
 DEBUG=True
+logger = mylogger.setup_logger()
 
 def tr(text): return text
 class MainWindow(QMainWindow):
@@ -30,17 +31,20 @@ class MainWindow(QMainWindow):
     starting_map = (64, 64)
     extension = ".map"
 
-    def __init__(self, options):
+    def __init__(self, args):
 
         super().__init__()
 
-        self._options = options
+        self._args = args
+
         self._map_dict = None
         self._current_path = None
 
-        self._widget = MainWidget(*self.starting_map)
-        self.setCentralWidget(self._widget)
+        # gui extras
+        #self._widget = MainWidget(*self.starting_map)
+        self._widget = MainWidget()
 
+        self.setCentralWidget(self._widget)
         self._toolbar = self._createToolbar()
         self._actions = self._createActions()
         self._createMenus(self._actions)
@@ -48,13 +52,46 @@ class MainWindow(QMainWindow):
         self.setWindowTitle(tr(init.__title__))
         self.show()
 
+        #start our server
+        #self._server = QProcess(self)
+        #self._server.setProgram(args.openttd_cmd[0])
+        #self._server.setArguments(args.openttd_cmd[1:])
+        #self._server.start()
+        #self._server.waitForStarted()
+
+        #udp server
+        self._udp_bufsize = args.bufsize
+        self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # UDP
+        self.sock.bind((args.host, args.port))
+        self.sock.setblocking(False)
         timer = QTimer(self)
         timer.timeout.connect(self.onPollUdp)
         timer.start(self.polling_ms)
 
-        if options.map:
-            self.cmdOpenMap(options.map)
+        if args.map:
+            self.cmdOpenMap(args.map)
 
+    def onPollUdp(self):
+
+        '''
+        if self._server.state() == QProcess.NotRunning:
+            logger.warning("openttd server is not running")
+            i = self._server.exitCode()
+            if (i):
+                logger.warning(f"openttd exited with code {i}")
+            return
+        '''
+
+        more_data = True
+        while(more_data):
+            try:
+                msg = self.sock.recv(self._udp_bufsize)
+                msg = msg.decode("utf-8")
+                print("received message: %s" % repr(msg))
+            except BlockingIOError:
+                #print("no data")
+                more_data = False
+            
     def _test(self):
         self._widget.view.setScene(self._widget.view._newScene(32,32))
         self._map_dict = None
@@ -114,43 +151,6 @@ class MainWindow(QMainWindow):
         for action in self._widget.actions.values():
             toolbar.addAction(action)
         return toolbar
-
-    def onPollUdp(self):
-
-        import socket
-        UDP_IP = "127.0.0.1" #FIXME
-        UDP_PORT = 6789
-        BUF_SIZE=1024
-
-        sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # UDP
-
-        sock.bind((UDP_IP, UDP_PORT))
-        sock.setblocking(0)
-
-        try:
-            msg = sock.recv(BUF_SIZE)
-            msg = msg.decode("utf-8")
-            print("received message: %s" % repr(msg))
-        except BlockingIOError:
-            print("blocking io error") #FIXME
-            
-
-
-    def onPollStdin(self):
-        from .server.ttd_output_parser import TTDOutputParser #FIXME this is broken
-        
-        n = 0
-        data = ""
-        while True:
-            l = sys.stdin.read(64)
-            if not l:
-                break
-            data += l
-
-        if not data:
-            return
-        for line in data.split("\n"):
-            self.parser.onData(line)
 
     def onMapUpdate(self, d):
         self._map_dict = d
